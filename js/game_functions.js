@@ -4,6 +4,7 @@ var mainScore = 0;
 
 function score() {
   updateScoreboard();
+  changeBackgroundColor();
 
   var newCoordinates = generateRandomCoordinates();
   $(".clickable-square").animate({
@@ -12,6 +13,7 @@ function score() {
   }, 300, function() {
     // Animation complete.
   });
+
 };
 
 function generateRandomCoordinates() {
@@ -27,4 +29,25 @@ function generateRandomCoordinates() {
 function updateScoreboard() {
   mainScore++;
   $(".scoreboard h3").html(mainScore);
+}
+
+function changeBackgroundColor() {
+  var r = 0;
+  var g = 0;
+  var b = 0;
+
+  r = Math.floor((Math.random() * 200) + 1);
+  g = Math.floor((Math.random() * 200) + 1);
+  b = Math.floor((Math.random() * 200) + 1);
+
+  var rgbString = "rgb("+r+","+g+","+b+");"
+
+  console.log(rgbString);
+
+  $("body").animate({
+    "backgroundColor": rgbString
+  }, 300, function() {
+    // Animation complete.
+  });
+
 }

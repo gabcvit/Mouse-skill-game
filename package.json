@@ -4,7 +4,8 @@
   "description": "This is a simple game that challenges the user to have a precise and fast response with the cursor",
   "main": "index.html",
   "dependencies": {
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "jquery-color": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
