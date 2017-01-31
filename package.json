@@ -1,0 +1,27 @@
+{
+  "name": "mouse-skill-game",
+  "version": "1.0.0",
+  "description": "This is a simple game that challenges the user to have a precise and fast response with the cursor",
+  "main": "index.html",
+  "dependencies": {
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabcvit/Mouse-skill-game.git"
+  },
+  "keywords": [
+    "Game",
+    "Mouse"
+  ],
+  "author": "Gabriel Checchia Vitali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabcvit/Mouse-skill-game/issues"
+  },
+  "homepage": "https://github.com/gabcvit/Mouse-skill-game#readme"
+}
