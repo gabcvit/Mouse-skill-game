@@ -1,15 +1,19 @@
 
 var mainScore = 0;
+var squareSize = 100;
 
 
 function score() {
   updateScoreboard();
   changeBackgroundColor();
+  $('.clickable-square').animateCss('rubberBand');
 
   var newCoordinates = generateRandomCoordinates();
   $(".clickable-square").animate({
     left: newCoordinates[0],
-    top: newCoordinates[1]
+    top: newCoordinates[1],
+    width: squareSize,
+    height: squareSize
   }, 300, function() {
     // Animation complete.
   });
@@ -20,14 +24,17 @@ function generateRandomCoordinates() {
   var left = 0;
   var top = 0;
 
-  left = Math.floor((Math.random() * 1150) + 70);
-  top = Math.floor((Math.random() * 650) + 0);
+  left = Math.floor((Math.random() * (1200 - squareSize)) + 70);
+  top = Math.floor((Math.random() * (700 - squareSize)) + 0);
 
   return [left, top];
 }
 
 function updateScoreboard() {
   mainScore++;
+  if(squareSize > 30) {squareSize = squareSize - 1;}
+
+  console.log(squareSize);
   $(".scoreboard h3").html(mainScore);
 }
 
@@ -51,3 +58,12 @@ function changeBackgroundColor() {
   });
 
 }
+
+$.fn.extend({
+    animateCss: function (animationName) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        this.addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+        });
+    }
+});
